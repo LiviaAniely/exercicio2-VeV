@@ -1,21 +1,17 @@
 package testes;
 
-
 import static org.junit.jupiter.api.Assertions.*;
-
-import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
 
 import processador.Boleto;
 
-class BoletoTest {
-
+class FaturaTest {
 	@Test
-	public void testCriarBoletosValidos(){
+	public void testCriarFaturaEmDia(){
 		
 		try{
-			Boleto b1 = new Boleto("111", "07/06/2024", 6000);
+			Fatura f = new Fatura("07/06/2024", 14500, "Arthur Vitor Araújo Lima");
 	    	
 		 }catch(IllegalArgumentException e){
 			 assertEquals("Entrada Inválida.",e.getMessage());
@@ -23,27 +19,29 @@ class BoletoTest {
 		
 	
 	@Test
-	public void testCriarBoletosInvalidosComCodigoInvalido(){
+	public void testCriarFaturaInvalidaComNomeInvalido(){
 		
 		try{
-			Boleto b1 = new Boleto("", "07/06/2024", 6000);
+			Fatura f = new Fatura("07/06/2024", 14500, "");
 		    	
 			}catch(IllegalArgumentException e){
 				 assertEquals("Entrada Inválida.",e.getMessage());
 		   }
 		
 		@Test
-		public void testCriarBoletosInvalidosComDataInvalida(){
+		public void testCriarFaturaInvalidaComDataInvalida(){
 			
 			try{
-				Boleto b1 = new Boleto("112", "", 6000);
+				Fatura f = new Fatura("", 14500, "Arthur Vitor Araújo Lima");
 			    	
 				}catch(IllegalArgumentException e){
 					 assertEquals("Entrada Inválida.",e.getMessage());
 			    }
 		
 		
-		}
+		
+	}
+
 	}
 
 
