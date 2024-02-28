@@ -20,6 +20,7 @@ class BoletoTest {
 		 }catch(IllegalArgumentException e){
 			 assertEquals("Entrada Inválida.",e.getMessage());
 	     }
+	}
 		
 	
 	@Test
@@ -31,6 +32,7 @@ class BoletoTest {
 			}catch(IllegalArgumentException e){
 				 assertEquals("Entrada Inválida.",e.getMessage());
 		   }
+	}
 		
 		@Test
 		public void testCriarBoletosInvalidosComDataInvalida(){

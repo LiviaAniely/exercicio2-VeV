@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 import processador.Boleto;
+import processador.Fatura;
 
 class FaturaTest {
 	@Test
@@ -16,7 +17,7 @@ class FaturaTest {
 		 }catch(IllegalArgumentException e){
 			 assertEquals("Entrada Inválida.",e.getMessage());
 	     }
-		
+	}
 	
 	@Test
 	public void testCriarFaturaInvalidaComNomeInvalido(){
@@ -27,7 +28,8 @@ class FaturaTest {
 			}catch(IllegalArgumentException e){
 				 assertEquals("Entrada Inválida.",e.getMessage());
 		   }
-		
+	}
+	
 		@Test
 		public void testCriarFaturaInvalidaComDataInvalida(){
 			

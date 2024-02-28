@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
 
 import processador.Boleto;
+import processador.Fatura;
+import processador.Processador;
 
 class ProcessadorTest {
 
