@@ -5,7 +5,8 @@ public class Tarefa {
     private String titulo;
     private String descricao;
     private String dataVencimento;
-    private Prioridade prioridade;
+    private Prioridade prioridade = Prioridade.NAO_INFORMADO;
+    private Integer id;
 
     public Tarefa(String titulo, String descricao, String dataVencimento) {
         this.titulo = titulo;
@@ -17,7 +18,7 @@ public class Tarefa {
         this.titulo = titulo;
         this.descricao = descricao;
         this.dataVencimento = dataVencimento;
-        this.prioridade = Prioridade.valueOf(prioridade);
+        this.prioridade = Prioridade.valueOf(prioridade.toUpperCase());
     }
 
     // Getters
@@ -52,5 +53,18 @@ public class Tarefa {
 
     public void setPrioridade(String prioridade) {
         this.prioridade = Prioridade.valueOf(prioridade);
+    }
+    
+    public Integer getId() {
+    	return this.id;
+    }
+    
+    public void setId(Integer id) {
+    	this.id = id;
+    }
+    
+    public String toString() {
+    	return "Titulo: " + this.titulo + "\nDescricao: " + this.descricao +
+    			"\nData: " + this.dataVencimento + "\nPrioridade: " + this.prioridade.toString();
     }
 }

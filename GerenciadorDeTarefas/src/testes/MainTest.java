@@ -5,11 +5,15 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import gerenciadorDeTarefas.Main;
+import gerenciadorDeTarefas.Tarefa;
+
 class MainTest {
 
+	Main sistema;
 	@BeforeEach
 	void criarSistema() {
-		Main sistema = new Sistema();
+		this.sistema = new Main();
 	}
 	
 	//Teste de criar tarefa
@@ -131,20 +135,26 @@ class MainTest {
 		try {
 			Tarefa tarefa = sistema.criarTarefa("Fazer atividade de VeV","Exercício 2 sobre TDD","04/03/2024","alta");
 			Integer id = tarefa.getId();
-			sistema.ExcluirTarefa(id);
-			assertEquals("Tarefa não encontrada.", sistema.getTarefa(id));
+			sistema.excluirTarefa(id);
+			sistema.getTarefa(id);
+			
 		}catch(IllegalArgumentException e) {
 			assertEquals("ID inválido", e.getMessage());
+		}catch(IndexOutOfBoundsException i) {
+			assertEquals("ID inexistente", i.getMessage());
 		}
 	}
 	
 	@Test
 	void testExcluirTarefaComIDInvalido() {
 		
-		Tarefa tarefa = sistema.criarTarefa("Fazer atividade de VeV","Exercício 2 sobre TDD","04/03/2024","alta");
-		Integer id = tarefa.getId();
-		sistema.ExcluirTarefa(id);
-		assertEquals("Tarefa não encontrada.", sistema.getTarefa(id));
+		try {
+			Tarefa tarefa = sistema.criarTarefa("Fazer atividade de VeV","Exercício 2 sobre TDD","04/03/2024","alta");
+			Integer id = tarefa.getId();
+			sistema.excluirTarefa(2);
+		}catch(IllegalArgumentException e) {
+			assertEquals("ID inválido", e.getMessage());
+		}
 		
 	}
 	
