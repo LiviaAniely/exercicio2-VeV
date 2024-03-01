@@ -7,6 +7,7 @@ public class Main {
 
 	Map<Integer,Tarefa> tarefas;
 	Integer id;
+	
 	public Main() {
 		this.tarefas = new HashMap<>();
 		this.id = 0;
@@ -34,6 +35,7 @@ public class Main {
 		Tarefa tarefa = new Tarefa(titulo, descricao, data, prioridade);
 		tarefa.setId(this.id);
 		this.id++; 
+		this.tarefas.put(tarefa.getId(), tarefa);
 		return tarefa;
 	}
 	
@@ -88,8 +90,10 @@ public class Main {
 	public String listarTarefas() {
 		
 		String saida = "";
-		for (Tarefa tarefa: this.tarefas.values()) {
-			saida += tarefa.toString();
+		System.out.println(this.tarefas.size());
+		for (Integer id: this.tarefas.keySet()) {
+			System.out.println(id);
+			saida += this.tarefas.get(id).toString() + "\n";
 		}
 		
 		return saida;

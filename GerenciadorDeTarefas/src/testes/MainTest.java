@@ -158,5 +158,22 @@ class MainTest {
 		
 	}
 	
+	@Test
+	void testListarTarefas() {
+		
+		String saida1 = "Titulo: Fazer atividade de VeV\nDescricao: Exercício 2 sobre TDD\nData: 04/03/2024\nPrioridade: alta\n";
+		String saida2 = "Titulo: Fazer atividade de IA\nDescricao: Quiz 4\nData: 05/03/2024\nPrioridade: media\n";
+		
+		String saidaEsperada = saida1 + saida2;
+		
+		
+		sistema.criarTarefa("Fazer atividade de VeV","Exercício 2 sobre TDD","04/03/2024","alta");
+		sistema.criarTarefa("Fazer atividade de IA","Quiz 4","05/03/2024","media");
+		
+		assertEquals(saidaEsperada, sistema.listarTarefas());
+		
+		
+	}
+	
 	
 }

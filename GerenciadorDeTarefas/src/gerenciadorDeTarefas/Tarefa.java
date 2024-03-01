@@ -65,6 +65,6 @@ public class Tarefa {
     
     public String toString() {
     	return "Titulo: " + this.titulo + "\nDescricao: " + this.descricao +
-    			"\nData: " + this.dataVencimento + "\nPrioridade: " + this.prioridade.toString();
+    			"\nData: " + this.dataVencimento + "\nPrioridade: " + this.prioridade.toString().toLowerCase();
     }
 }
