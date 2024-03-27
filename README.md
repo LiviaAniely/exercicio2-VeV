@@ -1,5 +1,5 @@
 # exercicio2-VeV
-Este repositório contém o exercício 2 da disciplina de Verificação &amp; Validação de Software. 
+Este repositório contém exercícios da disciplina de Verificação &amp; Validação de Software. 
 
 - Foram aplicadas técnicas de:
 1. TDD(Test Driven Development)
